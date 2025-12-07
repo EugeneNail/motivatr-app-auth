@@ -1,0 +1,31 @@
+services:
+  app:
+    container_name: motivatr-auth-app
+    image: motivatr-auth-app-image:latest
+    build:
+      context: ../
+      dockerfile: ./deploy/Dockerfile
+    env_file:
+      - .env.app
+      - .env.db
+    ports:
+      - "10000:10000"
+    restart: always
+    depends_on:
+      - db
+
+  db:
+    container_name: motivatr-auth-db
+    image: postgres:17
+    env_file:
+      - ./.env.db
+    ports:
+      - "10100:5432"
+    volumes:
+      - /var/lib/docker/volumes/motivatr/postgres/auth:/var/lib/postgresql/data
+    restart: always
+
+networks:
+  default:
+    external: true
+    name: motivatr-shared-network
