@@ -1,0 +1,6 @@
+[submodule "motivatr-tool-makefile"]
+	path = motivatr-tool-makefile
+	url = git@github.com:EugeneNail/motivatr-tool-makefile.git
+[submodule "motivatr-tool-migrator"]
+	path = motivatr-tool-migrator
+	url = git@github.com:EugeneNail/motivatr-tool-migrator.git

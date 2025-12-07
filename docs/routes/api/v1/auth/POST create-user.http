@@ -1,0 +1,10 @@
+### Create a new user
+
+POST {{origin}}/api/v1/auth/create-user
+
+{
+    "name": "John",
+    "email": "blank@mail.com",
+    "password": "Strong123",
+    "passwordConfirmation": "Strong123"
+}
