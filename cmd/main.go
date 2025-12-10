@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/EugeneNail/motivatr-app-auth/internal/application"
+	"github.com/EugeneNail/motivatr-app-auth/internal/application/commands"
 	"github.com/EugeneNail/motivatr-app-auth/internal/infrastructure/config"
 	"github.com/EugeneNail/motivatr-app-auth/internal/infrastructure/repositories/postgres"
+	transport "github.com/EugeneNail/motivatr-app-auth/internal/transport/http"
 	"github.com/EugeneNail/motivatr-lib-common/pkg/databases"
-	"github.com/EugeneNail/motivatr-lib-common/pkg/middlewares"
+	middlewares "github.com/EugeneNail/motivatr-lib-common/pkg/middlewares/http"
 	"net/http"
 )
 
@@ -23,10 +24,12 @@ func main() {
 
 	userRepository := postgres.NewUserRepository(db)
 
-	createUserHandler := application.NewCreateUserHandler(userRepository)
+	createUserHandler := commands.NewCreateUserHandler(userRepository)
+
+	httpHandler := transport.NewHandler(createUserHandler)
 
 	router := http.NewServeMux()
-	router.HandleFunc("POST /api/v1/auth/create-user", middlewares.WriteJsonResponse(createUserHandler))
+	router.HandleFunc("POST /api/v1/auth/create-user", middlewares.WriteJsonResponse(httpHandler.CreateUser))
 
 	err = http.ListenAndServe("0.0.0.0:10000", router)
 	if err != nil {
