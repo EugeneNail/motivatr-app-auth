@@ -44,5 +44,5 @@ func (handler *Handler) CreateUser(request *http.Request) (int, any) {
 		return http.StatusUnprocessableEntity, result.DomainValidationErrors
 	}
 
-	return http.StatusCreated, nil
+	return http.StatusCreated, result.Token
 }
