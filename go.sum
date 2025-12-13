@@ -1,5 +1,5 @@
-github.com/EugeneNail/motivatr-lib-common v0.2.2 h1:nxElSahOaxl4Jth9yof2paXDzO/FiXM1WcdcattBn0Y=
-github.com/EugeneNail/motivatr-lib-common v0.2.2/go.mod h1:Cw8+tNpgahHgDRyeE07a4za+4zTynbltP1mR/cFwoE4=
+github.com/EugeneNail/motivatr-lib-common v0.2.3 h1:BIw+6qBYpwMUKpATkpVi21M3OWOBRzB1cQtEH6wUOCw=
+github.com/EugeneNail/motivatr-lib-common v0.2.3/go.mod h1:Cw8+tNpgahHgDRyeE07a4za+4zTynbltP1mR/cFwoE4=
 github.com/golang-jwt/jwt/v5 v5.3.0 h1:pv4AsKCKKZuqlgs5sUmn4x8UlGa0kEVt/puTpKx9vvo=
 github.com/golang-jwt/jwt/v5 v5.3.0/go.mod h1:fxCRLWMO43lRc8nhHWY6LGqRcf+1gQWArsqaEUEa5bE=
 github.com/lib/pq v1.10.9 h1:YXG7RB+JIjhP29X+OtkiDnYaXQwpS4JEWq7dtCCRUEw=

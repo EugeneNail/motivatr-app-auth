@@ -37,7 +37,7 @@ func main() {
 	router.HandleFunc("POST /api/v1/auth/create-user", middlewares.WriteJsonResponse(httpHandler.CreateUser))
 	router.HandleFunc("POST /api/v1/auth/authenticate-user", middlewares.WriteJsonResponse(httpHandler.AuthenticateUser))
 
-	err = http.ListenAndServe("0.0.0.0:10000", router)
+	err = http.ListenAndServe("0.0.0.0:10000", middlewares.DisableLocalCors(router))
 	if err != nil {
 		panic(fmt.Errorf("starting the server: %w", err))
 	}

@@ -1,5 +1,6 @@
 services:
-  app:
+
+  motivatr-auth-app:
     container_name: motivatr-auth-app
     image: motivatr-auth-app-image:latest
     build:
@@ -8,11 +9,10 @@ services:
     env_file:
       - .env.app
       - .env.db
-    ports:
-      - "10000:10000"
     restart: always
     depends_on:
       - db
+
 
   db:
     container_name: motivatr-auth-db
