@@ -11,10 +11,10 @@ services:
       - .env.db
     restart: always
     depends_on:
-      - db
+      - motivatr-auth-db
 
 
-  db:
+  motivatr-auth-db:
     container_name: motivatr-auth-db
     image: postgres:17
     env_file:
